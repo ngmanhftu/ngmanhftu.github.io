@@ -4,149 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nguyễn Minh Anh | FTU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-attachment: fixed;
-      color: #f0f0f0;
-    }
-    /* Hero giống hoantt18 – ảnh bìa ở giữa đầu trang */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    .hero-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-      width: 90%;
-    }
-    .hero h1 {
-      font-size: 4.5em;
-      margin: 0;
-      color: #ffd700;
-      letter-spacing: 2px;
-    }
-    .hero p {
-      font-size: 1.8em;
-      margin: 15px 0 0;
+      font-family: 'Inter', sans-serif;
+      background: url('images/download.jpg') center/cover fixed;
       color: #fff;
+      min-height: 100vh;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.35);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
     }
 
-    /* Nội dung bên dưới */
+    /* Ảnh tròn ở giữa */
+    .avatar {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid rgba(255,255,255,0.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2em;
+      margin: 10px 0;
+      color: #fff;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+    }
+    .subtitle {
+      font-size: 1.5em;
+      margin: 10px 0 60px;
+      color: #e0f7fa;
+      font-weight: 300;
+    }
+
     .content {
-      max-width: 920px;
-      margin: -100px auto 60px;
+      background: rgba(15,32,39,0.92);
       padding: 60px;
-      background: rgba(15, 32, 39, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-      position: relative;
-      z-index: 10;
-      border: 1px solid rgba(255,215,0,0.15);
+      border-radius: 25px;
+      margin-top: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
+
     h2 {
-      color: #ffd700;
-      border-bottom: 3px solid #ffd700;
-      padding-bottom: 12px;
-      margin-top: 60px;
+      font-family: 'Playfair Display', serif;
+      color: #80cbc4;
+      font-size: 2.3em;
+      margin: 60px 0 30px;
+      position: relative;
     }
+    h2::after {
+      {
+      content: '';
+      width: 80px;
+      height: 3px;
+      background: #80cbc4;
+      display: block;
+      margin: 15px auto;
+    }
+
+    p {font-size: 1.2em; line-height: 1.9; color: #e0f7fa;}
+
     ul {list-style: none; padding: 0;}
     li {
-      background: rgba(255,215,0,0.08);
+      background: rgba(255,255,255,0.08);
       padding: 18px;
-      margin: 16px 0;
-      border-radius: 14px;
-      border-left: 5px solid #ffd700;
+      margin: 15px 0;
+      border-radius: 15px;
+      font-size: 1.1em;
     }
-    a {color: #ffd700; text-decoration: none;}
+    a {color: #80cbc4; text-decoration: none;}
+
     .mythings {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 25px;
-      margin: 60px 0;
+      margin: 70px 0;
     }
     .mythings img {
       width: 100%;
-      height: 320px;
+      height: 340px;
       object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
       transition: 0.5s;
     }
-    .mythings img:hover {transform: translateY(-15px);}
+    .mythings img:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 30px 60px rgba(128,203,196,0.4);
+    }
+
     footer {
-      text-align: center;
-      padding: 60px;
+      margin-top: 80px;
       color: #aaa;
-      font-style: italic;
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="container">
 
-  <!-- Hero giống hoantt18 100% -->
-  <div class="hero">
-    <img src="images/anhbia.jpg" alt="Nguyễn Minh Anh">
-    <div class="hero-text">
+      <!-- Ảnh tròn + tên ở giữa -->
+      <img src="images/anh bia.jpg" alt="Nguyễn Minh Anh" class="avatar">
       <h1>Nguyễn Minh Anh</h1>
-      <p>Sinh viên Kinh tế và Phát triển Quốc tế – ĐH Ngoại thương (FTU)</p>
+      <div class="subtitle">Sinh viên Kinh tế và Phát triển Quốc tế – ĐH Ngoại thương (FTU)</div>
+
+      <div class="content">
+
+        <h2>Giới thiệu</h2>
+        <p>
+          Mình là Minh Anh – cô gái FTU yêu du lịch, mê chụp ảnh và luôn tìm kiếm vẻ đẹp trong từng khoảnh khắc.<br>
+          Chuyên ngành <strong>Kinh tế và Phát triển Quốc tế</strong>, mình đặc biệt hứng thú với du lịch bền vững, kinh tế xanh và những câu chuyện con người.<br><br>
+         
+        </p>
+
+        <h2>Thông tin cá nhân</h2>
+        <ul>
+          <li><strong>Họ và tên:</strong> Nguyễn Minh Anh</li>
+          <li><strong>Chuyên ngành:</strong> Kinh tế và Phát triển Quốc tế</li>
+          <li><strong>Trường:</strong> Đại học Ngoại thương (FTU)</li>
+          <li><strong>Sở thích:</strong> Du lịch • Chụp ảnh • Đọc sách</li>
+        </ul>
+
+        <h2>Liên hệ</h2>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:nguyenminhanh.ftu@gmail.com">nguyenminhanh.ftu@gmail.com</a></li>
+          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ngmanhftu" target="_blank">linkedin.com/in/ngmanhftu</a></li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/ngmanhftu" target="_blank">github.com/ngmanhftu</a></li>
+        </ul>
+
+        <h2>My Things</h2>
+        <div class="mythings">
+          <img src="images/anh1.jpg" alt="1">
+          <img src="images/anh2.jpg" alt="2">
+          <img src="images/anh3.jpg" alt="3">
+          <img src="images/anh4.jpg" alt="4">
+          <img src="images/anh5.jpg" alt="5">
+          <img src="images/anh6.jpg" alt="6">
+        </div>
+
+        <footer>
+          © 2025 Nguyễn Minh Anh • Made with ♡ and GitHub Pages
+        </footer>
+
+      </div>
     </div>
-  </div>
-
-  <!-- Nội dung bên dưới -->
-  <div class="content">
-
-    <h2>Giới thiệu</h2>
-    <p style="text-align:center; font-size:1.25em; line-height:1.9;">
-      Mình là Minh Anh – cô gái FTU yêu du lịch, mê chụp ảnh và luôn tìm kiếm vẻ đẹp trong từng khoảnh khắc.<br>
-      Chuyên ngành <strong>Kinh tế và Phát triển Quốc tế</strong>, mình đặc biệt hứng thú với du lịch bền vững, kinh tế xanh và những câu chuyện của con người.<br><br>
-     
-    </p>
-
-    <h2>Thông tin cá nhân</h2>
-    <ul>
-      <li><strong>Họ và tên:</strong> Nguyễn Minh Anh</li>
-      <li><strong>Chuyên ngành:</strong> Kinh tế và Phát triển Quốc tế</li>
-      <li><strong>Trường:</strong> Đại học Ngoại thương (FTU)</li>
-      <li><strong>Sở thích:</strong> Du lịch • Chụp ảnh • Đọc sách</li>
-    </ul>
-
-    <h2>Liên hệ</h2>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:nguyenminhanh.ftu@gmail.com">nguyenminhanh.ftu@gmail.com</a></li>
-      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ngmanhftu" target="_blank">linkedin.com/in/ngmanhftu</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/ngmanhftu" target="_blank">github.com/ngmanhftu</a></li>
-    </ul>
-
-    <h2>My Things</h2>
-    <div class="mythings">
-      <img src="images/anh1.jpg" alt="1">
-      <img src="images/anh2.jpg" alt="2">
-      <img src="images/anh3.jpg" alt="3">
-      <img src="images/anh4.jpg" alt="4">
-      <img src="images/anh5.jpg" alt="5">
-      <img src="images/anh6.jpg" alt="6">
-    </div>
-
-    <footer>
-      © 2025 Nguyễn Minh Anh • Made with love and GitHub Pages
-    </footer>
-
   </div>
 </body>
 </html>
