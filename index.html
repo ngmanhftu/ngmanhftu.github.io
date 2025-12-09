@@ -2,130 +2,69 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Nguyễn Minh Anh | FTU</title>
- <style>
-   body {
-     margin: 0;
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-     background: url('images/download.jpg') center/cover fixed;
-     color: #e0f2f1;
-     min-height: 100vh;
-   }
-   .overlay {
-     background: rgba(13, 27, 42, 0.88);
-     min-height: 100vh;
-     padding: 60px 20px;
-   }
-   .container {
-     max-width: 1000px;
-     margin: auto;
-     text-align: center;
-   }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Minh Anh | FTU</title>
+  <style>
+    body {margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      background:url('images/download.jpg') center/cover fixed; color:#e0f2f1; min-height:100vh;}
+    .overlay {background:rgba(13,27,42,0.88); min-height:100vh; padding:60px 20px;}
+    .container {max-width:1100px; margin:auto; text-align:center;}
 
-   /* Ảnh tròn ở giữa */
-   .avatar {
-     width: 280px;
-     height: 280px;
-     border-radius: 50%;
-     object-fit: cover;
-     border: 10px solid rgba(255,255,255,0.15);
-     box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-     margin: 0 auto 30px;
-   }
+    .avatar {width:280px; height:280px; border-radius:50%; object-fit:cover;
+      border:10px solid rgba(255,255,255,0.15); box-shadow:0 20px 50px rgba(0,0,0,0.7);
+      margin-bottom:30px;}
 
-   h1 {
-     font-size: 4em;
-     font-weight: 700;
-     color: #ffffff;
-     margin: 10px 0;
-     letter-spacing: 1px;
-   }
-   .subtitle {
-     font-size: 1.5em;
-     color: #80cbc4;
-     margin: 10px 0 80px;
-     font-weight: 400;
-   }
+    h1 {font-size:4em; font-weight:700; color:#fff; margin:10px 0;}
+    .subtitle {font-size:1.5em; color:#80cbc4; margin-bottom:80px;}
 
-   .content {
-     background: rgba(20, 30, 48, 0.92);
-     padding: 70px;
-     border-radius: 25px;
-     backdrop-filter: blur(12px);
-     box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-   }
+    .content {background:rgba(20,30,48,0.92); padding:70px; border-radius:25px;
+      backdrop-filter:blur(12px); box-shadow:0 20px 60px rgba(0,0,0,0.6);}
 
-   h2 {
-     font-size: 2.4em;
-     color: #26a69a;
-     margin: 70px 0 35px;
-     position: relative;
-   }
-   h2::after {
-     content: '';
-     width: 100px;
-     height: 4px;
-     background: #26a69a;
-     display: block;
-     margin: 15px auto;
-     border-radius: 2px;
-   }
+    h2 {font-size:2.5em; color:#26a69a; margin:70px 0 40px;
+      position:relative; padding-bottom:15px;}
+    h2::after {content:''; width:100px; height:4px; background:#26a69a;
+      position:absolute; bottom:0; left:50%; transform:translateX(-50%); border-radius:2px;}
 
-   p {
-     font-size: 1.2em;
-     line-height: 1.9;
-     color: #b2dfdb;
-   }
+    p {font-size:1.25em; line-height:1.9; color:#b2dfdb; text-align:center;}
 
-   ul {
-     list-style: none;
-     padding: 0;
-   }
-   li {
-     background: rgba(38, 166, 154, 0.15);
-     padding: 18px;
-     margin: 15px 0;
-     border-radius: 15px;
-     font-size: 1.1em;
-     border-left: 5px solid #26a69a;
-   }
-   a {
-     color: #80cbc4;
-     text-decoration: none;
-     font-weight: 500;
-   }
+    ul {list-style:none; padding:0; max-width:700px; margin:0 auto 50px;}
+    li {background:rgba(38,166,154,0.15); padding:18px; margin:15px 0;
+      border-radius:15px; font-size:1.15em; text-align:left;
+      border-left:5px solid #26a69a; position:relative; padding-left:50px;}
+    li::before {content:"•"; color:#26a69a; font-size:2em;
+      position:absolute; left:18px; top:12px;}
 
-   .mythings {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: 30px;
-     margin: 80px 0;
-   }
-   .mythings img {
-     width: 100%;
-     height: 360px;
-     object-fit: cover;
-     border-radius: 20px;
-     box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-     transition: 0.5s;
-   }
-   .mythings img:hover {
-     transform: translateY(-15px);
-     box-shadow: 0 30px 60px rgba(38,166,154,0.4);
-   }
+    a {color:#80cbc4; text-decoration:none; font-weight:500;}
 
-   footer {
-     margin-top: 100px;
-     color: #80cbc4;
-     font-size: 1em;
-   }
- </style>
+    /* My Things đúng hệt hoantt18: 2 hàng × 3 cột */
+    .mythings {
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:30px;
+      max-width:1000px;
+      margin:80px auto;
+    }
+    .mythings img {
+      width:100%; height:340px; object-fit:cover;
+      border-radius:20px; box-shadow:0 15px 40px rgba(0,0,0,0.5);
+      transition:0.5s;
+    }
+    .mythings img:hover {transform:translateY(-15px);}
+
+    footer {margin-top:100px; color:#80cbc4;}
+
+    @media (max-width:900px) {
+      .mythings {grid-template-columns:repeat(2,1fr);}
+      h1 {font-size:3.2em;}
+    }
+    @media (max-width:600px) {
+      .mythings {grid-template-columns:1fr;}
+    }
+  </style>
 </head>
 <body>
   <div class="overlay">
     <div class="container">
-
       <img src="images/anh bia.jpg" alt="Nguyễn Minh Anh" class="avatar">
       <h1>Nguyễn Minh Anh</h1>
       <div class="subtitle">Sinh viên Kinh tế và Phát triển Quốc tế – ĐH Ngoại thương (FTU)</div>
@@ -134,23 +73,23 @@
 
         <h2>Giới thiệu</h2>
         <p>
-          Mình là Minh Anh – cô gái FTU yêu du lịch, mê chụp ảnh và luôn tìm kiếm vẻ đẹp trong từng khoảnh khắc.<br>
+          Mình là Minh Anh – cô gái yêu du lịch, mê chụp ảnh và luôn tìm kiếm vẻ đẹp trong từng khoảnh khắc.<br>
          
         </p>
 
         <h2>Thông tin cá nhân</h2>
         <ul>
-          <li><strong>Họ và tên:</strong> Nguyễn Minh Anh</li>
-          <li><strong>Chuyên ngành:</strong> Kinh tế và Phát triển Quốc tế</li>
-          <li><strong>Trường:</strong> Đại học Ngoại thương (FTU)</li>
-          <li><strong>Sở thích:</strong> Du lịch • Chụp ảnh • Đọc sách</li>
+          <li>Họ và tên: Nguyễn Minh Anh</li>
+          <li>Chuyên ngành: Kinh tế và Phát triển Quốc tế</li>
+          <li>Trường: Đại học Ngoại thương (FTU) – Hà Nội</li>
+          <li>Sở thích: Du lịch • Chụp ảnh • Đọc sách</li>
         </ul>
 
         <h2>Liên hệ</h2>
         <ul>
-          <li><strong>Email:</strong> <a href="mailto:nguyenminhanh.ftu@gmail.com">nguyenminhanh.ftu@gmail.com</a></li>
-          <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/ngmanhftu" target="_blank">linkedin.com/in/ngmanhftu</a></li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/ngmanhftu" target="_blank">github.com/ngmanhftu</a></li>
+          <li>Email: <a href="mailto:nguyenminhanh.ftu@gmail.com">nguyenminhanh.ftu@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/ngmanhftu" target="_blank">linkedin.com/in/ngmanhftu</a></li>
+          <li>GitHub: <a href="https://github.com/ngmanhftu" target="_blank">github.com/ngmanhftu</a></li>
         </ul>
 
         <h2>My Things</h2>
